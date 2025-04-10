@@ -1,0 +1,39 @@
+<MyWidget>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 15
+
+    Label:
+        id: my_label
+        text: "Welcome!"
+        font_size: 24
+        size_hint_y: None
+        height: 40
+
+    Button:
+        text: "Click Me"
+        on_press: root.on_button_click()
+
+    TextInput:
+        id: my_input
+        hint_text: "Type something and press Enter"
+        multiline: False
+        on_text_validate: root.on_text_validate(self.text)
+
+    CheckBox:
+        on_active: root.on_checkbox_active(self.active)
+
+    Spinner:
+        text: 'Choose one'
+        values: ['Option A', 'Option B', 'Option C']
+        on_text: root.on_spinner_select(self.text)
+
+    ToggleButton:
+        text: 'Toggle Me'
+        on_state: root.on_toggle(self.state)
+
+    Slider:
+        min: 0
+        max: 100
+        value: 50
+        on_value: root.on_slider_change(self.value)
